@@ -134,3 +134,53 @@ SWITCH(
     "120+ Days"
 )
 
+
+
+🚀 How to Use
+
+Download the Power BI report file .pbix.
+
+Download the dataset donor_dummy_data.xlsx.
+
+Open the .pbix in Power BI Desktop.
+
+Refresh data connections (point to your local Excel file).
+
+Explore the dashboard pages and interactive slicers.
+
+
+🛠️ Tech Stack
+
+Power BI Desktop
+
+Power Query
+
+DAX (Data Analysis Expressions)
+
+MS Excel
+
+Data Modeling
+
+UX/UI Visualization Layer
+
+
+
+🎯 Business Impact
+
+This dashboard helps non-profits:
+
+Improve donor retention with clear donor history
+
+Track recurring income more accurately
+
+Recover failed or overdue pledges quickly
+
+Make data-driven fundraising decisions
+
+Identify high-value donors for special engagement
+
+Optimize payment and communication strategies
+
+
+👨‍💻Shubham Trivedi
+Power BI Developer | Analytics | Data Modeling
