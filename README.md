@@ -1,60 +1,86 @@
-Donor Management & Fundraising Analytics — Power BI Report
+# 🎯 Donor Management & Fundraising Analytics Dashboard (Power BI)
 
-One-line: Interactive Power BI dashboard for donor analytics and fundraising performance — donation trends, recurring pledges, failed transactions, payment-method analysis, and donor segmentation.
+A complete end-to-end Power BI analytics solution designed for non-profit and fundraising organizations.  
+This dashboard provides deep insights into donor behavior, donation performance, recurring income, pledge overdue trends, payment methods, failed transactions, and donor segmentation.  
 
-Summary
+Built with a clean UI, dynamic filters, drill-through reports, and fully optimized DAX measures.
 
-This project is a professional Power BI solution that provides a complete analytics suite for non-profits and fundraising teams. It converts transactional donation data into actionable insights for donor relations, finance, call center, and marketing teams. The dashboard helps identify loyal (recurring) donors, track overdue pledges, analyze monthly income, monitor failed payments for outreach, and segment donors for campaigns.
+---
 
-What’s included
+## 📌 Project Overview
 
-Donor / Donation / Pledge / Communication / ProgramAllocation sheets (Excel) — sample dummy data used for demo.
+This project converts raw donor and donation data into a professional multi-page analytical dashboard.  
+It helps fundraising teams track donor activity, improve retention, recover failed donations, and plan targeted campaigns.
 
-Power BI report (.pbix) with 6 pages:
+The dataset is a **realistic dummy dataset** created specifically for demo and portfolio purposes.
 
-Donation Summary — KPI cards, donation trend, donations by campaign, recurring vs one-time breakdown, donor-level table.
+---
 
-Pledge Overdue Summary — aging, overdue totals, overdue donors table.
+## 📚 **Key Features**
 
-Monthly Income Report — month-by-month income, channel/campaign breakdown, YoY comparisons.
+### 🔹 **1. Donation Summary**
+- Total Donation, Donation Count, Avg Donation
+- Year-over-year donation trend
+- Donations by campaign
+- Top recurring donors
+- Detailed donation records table
+- Dynamic filtering using *Donation Period*
 
-Payment Method Analysis — share and trend of payment methods, avg donation by method.
+### 🔹 **2. Pledge Overdue Summary**
+- Overdue pledge aging buckets (0–30, 31–60, 61–90, 120+ days)
+- Total pledges vs overdue pledges
+- Overdue trend over the years
+- Top overdue donors
+- Outstanding pledge record table
+- Frequency & status breakdown
 
-Failed Transaction Summary — failed transactions list, failure reason analysis, failed-amount KPIs.
+### 🔹 **3. Monthly Income Report**
+- Monthly donation income trend (Jan–Dec)
+- Total active donors
+- Recurring vs one-time donation comparison
+- Campaign-wise and method-wise income distribution
+- Detailed monthly table
 
-Donor Segmentation — RFM-like segments (New, Lapsed, High-Value, Recurring), segment contribution charts.
+### 🔹 **4. Donor Segmentation**
+- Donor categories:  
+  *New Donor, Lapsed Donor, Monthly Recurring Donor, One-time Donor, Corporate/Church/Community Donor*
+- Segment-wise donation amount contribution
+- Year-wise segment trend visualization
+- Active donor count, new donor count, high-value donor count
 
-Sample screenshots (from the report) to showcase layout and visuals.
+### 🔹 **5. Donor Summary (Drill-Through Page)**
+- Donor-specific donation insights
+- First Donation Date & Last Donation Date
+- Total donated & Avg donation
+- Recurring vs One-time breakdown
+- Donation timeline trend
+- Donor engagement/touchpoint table (Email, Call, Event, etc.)
 
-Useful example DAX measures used in the report (First Donation Date, Last Donation Date, Recurring %, Total Donation Amount, Failure Rate, Days Since Last Donation, Overdue Aging bucket).
+### 🔹 **6. Payment Method Analysis**
+- Donation distribution by payment method  
+  *(Credit Card, Bank Transfer, Wallet/Mobile Pay, Cash, Others)*
+- Donation distribution by Engagement Type  
+  *(Most Used, Stable Large Gifts, Younger Donors, Declining Trend)*
+- Monthly donation trend by method
+- Highlighting major payment contributors
 
-Key features & business value
+### 🔹 **7. Failed Transaction Summary**
+- Failed/Pending donation records
+- Failure reasons (Card Declined, Bank Error, Insufficient Funds, etc.)
+- Total failed amount & donor-level breakdown
+- Payment method comparison for failures
+- Donation period slicer for quick filters
 
-Donor 360 view — rapid profile view with first/last donation, total given, donation trend, and communication logs.
+---
 
-Predictable income visibility — recurring donation analysis to measure reliable monthly income.
+## 📊 **Data Model (High-Level)**
 
-Pledge monitoring — overdue detection and aging buckets for proactive follow-up.
+**Tables Used:**
+- **Donor** – Donor details and demographics  
+- **Donation** – All donation transactions  
+- **Pledge** – Recurring pledges and expected payments  
+- **Communication** – Donor engagement touchpoints  
+- **ProgramAllocation** – Fund allocation by program  
+- **FailedReasons** – Lookup for failure categories  
 
-Operational insights — failed transaction reasons and amounts for donor-care outreach to recover revenue.
-
-Segmentation for campaigns — identify high-value and lapsed donors for targeted reactivation or stewardship.
-
-Finance-ready reporting — monthly income with program allocation for board/leadership review.
-
-Data model (high-level)
-
-Donor (DonorID, DonorName, Contact Info, Category, JoinDate, PreferredPaymentMethod)
-
-Donation (DonationID, DonorID, DonationDate, Amount, PaymentMethod, CampaignName, Channel, IsRecurring, Status, Notes)
-
-Pledge (PledgeID, DonorID, PledgeAmount, Frequency, LastPaymentDate, ExpectedPaymentDate, Status)
-
-Communication (CommID, DonorID, CommType, CommDate, Notes)
-
-ProgramAllocation (AllocationID, DonationID, ProgramName, AllocatedAmount)
-
-FailedReasons lookup for failure codes
-
-Relationships:
-Donor[DonorID] -> Donation[DonorID], Donor[DonorID] -> Pledge[DonorID], Donation[DonationID] -> ProgramAllocation[DonationID], Donor[DonorID] -> Communication[DonorID].
+**Model Relationships:**
