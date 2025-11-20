@@ -84,3 +84,53 @@ The dataset is a **realistic dummy dataset** created specifically for demo and p
 - **FailedReasons** – Lookup for failure categories  
 
 **Model Relationships:**
+Donor[DonorID] → Donation[DonorID]
+Donor[DonorID] → Pledge[DonorID]
+Donor[DonorID] → Communication[DonorID]
+Donation[DonationID] → ProgramAllocation[DonationID]
+
+
+
+---
+
+## 🧮 **Highlighted DAX Measures**
+
+```DAX
+-- First Donation Date
+First Donation Date =
+CALCULATE(MIN(Donation[DonationDate]))
+
+-- Last Donation Date
+Last Donation Date =
+CALCULATE(MAX(Donation[DonationDate]))
+
+-- Total Donation Amount
+Total Donation Amount = SUM(Donation[Amount])
+
+-- Donation Count
+Donation Count = COUNTROWS(Donation)
+
+-- Recurring %
+Recurring % =
+VAR TotalDn = COUNTROWS(Donation)
+VAR RecDn = COUNTROWS(FILTER(Donation, Donation[IsRecurring] = TRUE()))
+RETURN DIVIDE(RecDn, TotalDn, 0)
+
+-- Days Since Last Donation
+Days Since Last Donation =
+DATEDIFF([Last Donation Date], TODAY(), DAY)
+
+-- Overdue Days (Pledge)
+Overdue Days =
+DATEDIFF(Pledge[ExpectedPaymentDate], TODAY(), DAY)
+
+-- Overdue Aging Bucket
+Overdue Aging =
+SWITCH(
+    TRUE(),
+    [Overdue Days] <= 30, "0–30 Days",
+    [Overdue Days] <= 60, "31–60 Days",
+    [Overdue Days] <= 90, "61–90 Days",
+    "120+ Days"
+)
+
